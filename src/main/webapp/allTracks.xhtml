@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/templates/default.xhtml">
+
+    <ui:define name="content">
+        <p>
+            <h:form>
+                <h:dataTable value="#{trackJsf.trackListDM}" var="item">
+                <f:facet name="header">#{msg.allTracksT}</f:facet>
+
+                <h:column>
+                    <f:facet name="header">#{msg.nameTrackT}</f:facet>
+                    #{item.name} 
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">#{msg.countryTrackT}</f:facet>
+                    #{item.country}
+                </h:column>
+                
+                <h:column>
+                    <h:commandLink value="#{msg.show}" action="#{trackJsf.showTrack()}"/> - 
+                    <h:commandLink value="#{msg.edit}" action="#{trackJsf.editTrack}"/> - 
+                    <h:commandLink value="#{msg.delete}" action="#{trackJsf.deleteTrack}"/>
+                </h:column>
+            </h:dataTable>
+            </h:form>
+        </p>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <h:form id="track_form">
+        <h:panelGrid columns="3">
+
+            <h:outputText value="#{msg.nameTrack}" />
+            <h:inputText id="nameTrack" value="#{trackJsf.track.name}" size="64">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="nameTrack" style="color:red" />
+            
+            <h:outputText value="#{msg.countryTrack}" />
+            <h:inputText id="countryTrack" value="#{trackJsf.track.country}" size="20">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="countryTrack" style="color:red" />
+            
+            <h:outputText value="#{msg.lenghtTrack}" />
+            <h:inputText id="lenghtTrack" value="#{trackJsf.track.lenght}" size="10">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="lenghtTrack" style="color:red" />
+            
+            <h:outputText value="#{msg.recordTrack}" />
+            <h:inputText id="recordTrack" value="#{trackJsf.track.record}" size="10">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="recordTrack" style="color:red" />
+        </h:panelGrid>
+        <p>
+            <h:commandButton value="#{msg.persist}" action="#{trackJsf.persist}" />
+        </p>
+    </h:form>
+</ui:composition>
